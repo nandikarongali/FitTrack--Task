@@ -1,0 +1,217 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Light Theme */
+body {
+  background: #f4f6f9;
+  color: #333;
+  transition: background 0.3s, color 0.3s;
+}
+
+header {
+  background: #4CAF50;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+header button {
+  background: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform 0.2s;
+}
+
+header button:hover {
+  transform: scale(1.1);
+}
+
+/* Grid Layout */
+main {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+.activity-form, .activity-list, .progress, .charts {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.activity-form:hover, .activity-list:hover, .progress:hover, .charts:hover {
+  transform: translateY(-5px);
+}
+
+.activity-form input, .activity-form button {
+  display: block;
+  margin: 0.5rem 0;
+  padding: 0.7rem;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Activity List */
+.activity-list ul {
+  list-style: none;
+}
+
+.activity-list li {
+  background: #e9f5e9;
+  margin: 0.5rem 0;
+  padding: 0.7rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.activity-list li:hover {
+  transform: scale(1.02);
+  background: #d4f0d4;
+}
+
+.activity-list button {
+  margin-left: 0.5rem;
+  padding: 0.3rem 0.6rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button.complete { background: #4CAF50; color: white; }
+button.delete { background: #f44336; color: white; }
+button.edit { background: #2196F3; color: white; }
+
+/* Progress Bar */
+.progress-bar {
+  background: #ddd;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 25px;
+  margin: 1rem 0;
+}
+
+#progress-fill {
+  background: #4CAF50;
+  height: 100%;
+  width: 0%;
+  transition: width 0.5s ease-in-out;
+}
+
+#badge-section {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #ff9800;
+}
+
+/* Charts Section */
+.charts {
+  grid-column: span 3;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.charts-heading {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #4CAF50;
+  margin-bottom: 1rem;
+}
+
+.chart-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.chart-box {
+  flex: 1;
+  min-width: 350px;
+  max-width: 600px;
+}
+
+canvas {
+  margin: 1rem auto;
+  max-width: 100%;
+  height: 350px;
+}
+
+#pieChart, #doughnutChart, #lineChart {
+  max-width: 400px;
+  max-height: 300px;
+}
+
+/* Dark Theme */
+body.dark {
+  background: #121212;
+  color: #f4f4f4;
+}
+
+body.dark header {
+  background: #333;
+}
+
+body.dark .activity-form,
+body.dark .activity-list,
+body.dark .progress,
+body.dark .charts {
+  background: #1e1e1e;
+  color: #f4f4f4;
+}
+
+/* Enhanced visibility for My Activities in night mode */
+body.dark .activity-list li {
+  background: #2e7d32;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+body.dark .activity-list button.complete {
+  background: #66bb6a;
+}
+
+body.dark .activity-list button.edit {
+  background: #42a5f5;
+}
+
+body.dark .activity-list button.delete {
+  background: #ef5350;
+}
+
+body.dark .activity-list button:hover {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+  .chart-row {
+    flex-direction: column;
+  }
+}

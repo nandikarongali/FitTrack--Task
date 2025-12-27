@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FitTrack Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🏋️ FitTrack</h1>
+    <button id="toggle-theme">🌙 Toggle Dark/Light</button>
+  </header>
+
+  <main>
+    <section class="activity-form">
+      <h2>Add Activity</h2>
+      <input type="text" id="activity-name" placeholder="Activity name (e.g., Running)" />
+      <input type="number" id="activity-steps" placeholder="Steps / Reps" />
+      <button id="add-activity">➕ Add</button>
+    </section>
+
+    <section class="activity-list">
+      <h2>My Activities</h2>
+      <ul id="activities"></ul>
+    </section>
+
+    <section class="progress">
+      <h2>Progress Summary</h2>
+      <div class="progress-bar">
+        <div id="progress-fill"></div>
+      </div>
+      <p id="progress-text">0% Completed</p>
+      <div id="badge-section"></div>
+    </section>
+
+    <section class="charts">
+      <h2 class="charts-heading">📊 Data Analytics and Visualisation</h2>
+      <div class="chart-row">
+        <div class="chart-box"><canvas id="barChart"></canvas></div>
+        <div class="chart-box"><canvas id="lineChart"></canvas></div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-box"><canvas id="pieChart"></canvas></div>
+        <div class="chart-box"><canvas id="doughnutChart"></canvas></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>FitTrack © 2025 | Stay Healthy 💪</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
